@@ -20,7 +20,7 @@ const Dealers = () => {
       method: "GET"
     });
     const retobj = await res.json();
-    if(retobj.status === 200) {
+    if(retobj.status) {
       let state_dealers = Array.from(retobj.dealers)
       setDealersList(state_dealers)
     }
@@ -31,7 +31,7 @@ const Dealers = () => {
       method: "GET"
     });
     const retobj = await res.json();
-    if(retobj.status === 200) {
+    if(retobj.status) {
       let all_dealers = Array.from(retobj.dealers)
       let states = [];
       all_dealers.forEach((dealer)=>{
